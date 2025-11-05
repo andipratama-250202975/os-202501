@@ -133,13 +133,14 @@ Sertakan screenshot hasil percobaan atau diagram:
      ```
       - Catat PID proses `sleep`.
      ```bash
-     faiqatha     494  0.0  0.0   3124  1664 pts/0    S    10:01   0:00 sleep 1000
-     faiqatha     509  0.0  0.0   4088  1920 pts/0    S+   10:02   0:00 grep --color=auto sleep
+     andi         944  0.0  0.0   3124  1068 pts/0    S    14:13   0:00 sleep 1000
+     andi         946  0.0  0.1   4088  1968 pts/0    S+   14:13   0:00 grep --color=auto sleep
       ````
   - Hentikan proses:
      ```bash
-    ` kill 494`
-     faiqatha     731  0.0  0.0   4088  1920 pts/0    S+   10:11   0:00 grep --color=auto sleep [1]+  Terminated              sleep 1000
+    ` kill 964`
+     -bash: syntax error near unexpected token `newline'
+     [3]+  Terminated              sleep 1000
      ```
      
 ---
@@ -152,15 +153,26 @@ Sertakan screenshot hasil percobaan atau diagram:
    - Amati hierarki proses dan identifikasi proses induk (`init`/`systemd`).  
    - Catat hasilnya dalam laporan.
    ```bash  
-systemd(1)─┬─agetty(230)
-            ├─cron(200)
-            ├─dbus-daemon(201)
-            ├─rsyslogd(227)
-            ├─snapd(216)
-            └─init-systemd(ub(2))─┬─SessionLeader(973)─┬─Relay(978)─┬─bash(978)─┬─head(1293)
-                                                         ├─pstree(1292)
-                                                         ├─sleep(1280)
-                                                         └─sleep(1288)
+systemd(1)-+-agetty(199)
+           |-agetty(217)
+           |-cron(151)
+           |-dbus-daemon(152)
+           |-init-systemd(Ub(2)-+-SessionLeader(343)---Relay(345)(344)---bash(345)-+-head(968)
+           |                    |                                                  |-pstree(967)
+           |                    |                                                  |-sleep(944)
+           |                    |                                                  `-sleep(950)
+           |                    |-init(8)---{init}(9)
+           |                    |-login(346)---bash(449)
+           |                    `-{init-systemd(Ub}(10)
+           |-polkitd(788)-+-{polkitd}(790)
+           |              |-{polkitd}(791)
+           |              `-{polkitd}(792)
+           |-rsyslogd(192)-+-{rsyslogd}(246)
+           |               |-{rsyslogd}(247)
+           |               `-{rsyslogd}(255)
+           |-systemd(435)---(sd-pam)(436)
+           |-systemd-journal(59)
+           |-systemd-logind(164)
    ```
 
 
@@ -241,20 +253,7 @@ systemd(1)─┬─agetty(230)
   - User management dan keamanan sistem Linux saling berkaitan erat. Dengan pengaturan user, group, dan permission yang baik, administrator dapat mengontrol akses, melindungi data penting, mencegah kesalahan pengguna, dan memperkuat keamanan sistem secara keseluruhan.
    
 4. Upload laporan ke repositori Git tepat waktu.
----
 
-## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
-
----
-
-## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
 
 ---
 
