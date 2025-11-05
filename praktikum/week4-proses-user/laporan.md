@@ -337,6 +337,20 @@ systemd(1)─┬─agetty(230)
 
 ---
 
+## Quiz
+1. Apa fungsi dari proses `init` atau `systemd` dalam sistem Linux?
+   jawaban: Menginisialisasi sistem, yaitu memulai semua proses penting seperti layanan (service), daemon, dan konfigurasi sistem. 
+2. Apa perbedaan antara `kill` dan `killall`?
+   jawaban: kill digunakan untuk menghentikan proses berdasarkan PID (Process ID).
+            Contoh: kill 1234 menghentikan proses dengan PID 1234.
+            killall digunakan untuk menghentikan semua proses dengan nama yang sama.
+            Contoh: killall firefox menghentikan semua proses bernama firefox. 
+3. Mengapa user `root` memiliki hak istimewa di sistem Linux?
+   jawaban: User root memiliki hak istimewa karena merupakan administrator utama sistem Linux.
+            Akun ini memiliki akses penuh ke semua file, perintah, dan konfigurasi sistem, sehingga dapat mengelola pengguna lain, menginstal atau menghapus software, serta mengubah pengaturan sistem.
+
+---
+
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
