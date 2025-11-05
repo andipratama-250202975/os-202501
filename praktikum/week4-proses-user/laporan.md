@@ -40,11 +40,18 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
-
+1.  Mempersiapkan lingkungan Linux (Ubuntu/WSL) 
+2.  Melakukan **Eksperimen 1** untuk mengidentifikasi user yang sedang aktif menggunakan `whoami`, `id`, dan `groups`, kemudian screenshots hasilnya dan letakan di `screenshots/user.png`
+3.  Melakukan **Eksperimen 2** untuk memonitor proses yang berjalan menggunakan `ps aux` dan `top`, kemudian screenshots hasilnya dan letakan di `screenshots/top.png`
+4.  Melakukan **Eksperimen 3** untuk mengontrol proses dengan menjalankan `sleep` di latar belakang, mencari PID-nya, dan menghentikannya dengan `kill` , kemudian screenshots hasilnya dan letakan di `screenshots/sleep.png`
+5.  Melakukan **Eksperimen 4** untuk menganalisis hierarki proses menggunakan `pstree`, kemudian screenshots hasilnya dan letakan di `screenshots/pstree.png`
+6.  Mendokumentasikan seluruh hasil dan analisis dalam file `laporan.md`.
+7.  Melakukan `commit` dan `push` hasil praktikum ke repositori GitHub dengan pesan commit yang sesuai.
+    ```
+    git add .
+    git commit -m "Minggu 4 - Manajemen Proses & User"
+    git push origin main
+    ```
 ---
 
 ## C. Langkah Pengerjaan
