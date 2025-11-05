@@ -122,8 +122,9 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
-
+![alt text](<screenshots/head.png>)
+![alt text](<screenshots/user.png>)
+![alt text](<screenshots/sleep.png>)
 ---
 
 ## Analisis
