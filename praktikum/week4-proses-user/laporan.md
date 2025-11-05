@@ -26,7 +26,16 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+- Proses adalah program yang sedang dijalankan oleh sistem. Setiap proses memiliki ID sendiri (PID), status, dan menggunakan sumber daya seperti memori dan CPU. Sistem operasi bertugas membuat, menjalankan, dan menghentikan proses agar semua tugas di komputer bisa berjalan dengan baik.
+
+- Sistem operasi juga mengatur bagaimana proses berjalan secara bergantian, berkomunikasi, dan bisa dikontrol. Proses dapat berada dalam keadaan berjalan, menunggu, atau sudah berhenti. Untuk melihat dan mengatur proses, dapat digunakan perintah seperti `ps`, `top`, dan `kill`.
+
+- Linux merupakan sistem multiuser, artinya banyak pengguna bisa memakai sistem yang sama. Setiap pengguna memiliki ID dan group tertentu. Pengaturan user dan group dilakukan agar setiap pengguna hanya bisa mengakses file atau sumber daya yang sesuai dengan haknya.
+
+- User root adalah pengguna dengan hak tertinggi. Karena bisa mengubah semua bagian sistem, penggunaan root perlu hati-hati. Linux menggunakan sistem izin atau permission agar keamanan tetap terjaga dan pengguna lain tidak bisa sembarangan mengubah data penting.
+
+- Saat Linux dinyalakan, proses pertama yang dijalankan adalah init atau systemd. Proses ini akan menyalakan layanan lain dan menjadi induk bagi semua proses lainnya. Hubungan antarproses ini bisa dilihat menggunakan perintah pstree.
+
 
 ---
 
