@@ -1,13 +1,13 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu 6
 Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Andi Pratama 
+- **NIM**   : 250202975
+- **Kelas** : 1IKRA
 
 ---
 
@@ -34,7 +34,7 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![alt text](<screenshots/Ekseperimen 1 dan 2.png>)
 
 **Eksperimen 1 – Round Robin (RR)**
 - *Time quantum (q)* = 3.  
