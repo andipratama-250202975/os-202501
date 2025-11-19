@@ -34,7 +34,7 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![alt text](<screenshots/Ekseperimen 1 dan 2.png>)
+![alt text](./screenshots/Eksperimen 1 dan 2.png)
 
 **Eksperimen 1 – Round Robin (RR)**
 - *Time quantum (q)* = 3.  
