@@ -1,4 +1,4 @@
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/68b493db-14e7-4c01-aee8-f5cc6765da14" />
+
 # Laporan Praktikum Minggu [X]
 Topik: Simulasi Algoritma Penjadwalan CPU
 
@@ -89,8 +89,7 @@ for p in processes:
 
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/68b493db-14e7-4c01-aee8-f5cc6765da14" />
 
 ---
 
