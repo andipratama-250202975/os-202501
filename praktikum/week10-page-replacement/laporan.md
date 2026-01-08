@@ -1,4 +1,4 @@
-# Laporan Praktikum Minggu [X]
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/88f50aad-d686-416a-aefb-ed6b264678b0" /># Laporan Praktikum Minggu 10
 Topik: Manajemen Memori – Page Replacement (FIFO & LRU)
 
 ---
@@ -81,11 +81,103 @@ LRU menggantikan halaman yang paling lama tidak digunakan berdasarkan asumsi bah
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
-```bash
-uname -a
-lsmod | head
-dmesg | head
+# ============================================
+# Program Simulasi Page Replacement
+# Algoritma FIFO dan LRU
+# ============================================
+
+pages = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
+frame_size = 3
+
+
+def print_header(title):
+    print("\n" + "=" * 50)
+    print(title)
+    print("=" * 50)
+    print("Step | Page | Frames\t\t | Status")
+    print("-" * 50)
+
+
+def fifo(pages, frame_size):
+    frames = []
+    page_faults = 0
+    page_hits = 0
+
+    print_header("SIMULASI FIFO")
+
+    for i, page in enumerate(pages, start=1):
+        if page in frames:
+            page_hits += 1
+            status = "Page Hit"
+        else:
+            page_faults += 1
+            status = "Page Fault"
+            if len(frames) < frame_size:
+                frames.append(page)
+            else:
+                frames.pop(0)
+                frames.append(page)
+
+        print(f"{i:>4} | {page:^4} | {str(frames):<16} | {status}")
+
+    print("\nRingkasan FIFO")
+    print("Total Page Hit   :", page_hits)
+    print("Total Page Fault :", page_faults)
+    return page_faults
+
+
+def lru(pages, frame_size):
+    frames = []
+    page_faults = 0
+    page_hits = 0
+
+    print_header("SIMULASI LRU")
+
+    for i, page in enumerate(pages, start=1):
+        if page in frames:
+            page_hits += 1
+            status = "Page Hit"
+            frames.remove(page)
+            frames.append(page)
+        else:
+            page_faults += 1
+            status = "Page Fault"
+            if len(frames) < frame_size:
+                frames.append(page)
+            else:
+                frames.pop(0)
+                frames.append(page)
+
+        print(f"{i:>4} | {page:^4} | {str(frames):<16} | {status}")
+
+    print("\nRingkasan LRU")
+    print("Total Page Hit   :", page_hits)
+    print("Total Page Fault :", page_faults)
+    return page_faults
+
+
+# ======================
+# Program Utama
+# ======================
+print("STRING REFERENSI :", pages)
+print("JUMLAH FRAME     :", frame_size)
+
+fifo_faults = fifo(pages, frame_size)
+lru_faults = lru(pages, frame_size)
+
+print("\n" + "=" * 50)
+print("PERBANDINGAN HASIL")
+print("=" * 50)
+print("FIFO Page Fault :", fifo_faults)
+print("LRU  Page Fault :", lru_faults)
+
+if fifo_faults > lru_faults:
+    print("Kesimpulan: LRU lebih efisien dibanding FIFO")
+elif fifo_faults < lru_faults:
+    print("Kesimpulan: FIFO lebih efisien dibanding LRU")
+else:
+    print("Kesimpulan: FIFO dan LRU sama efisien")
+
 ```
 
 ---
