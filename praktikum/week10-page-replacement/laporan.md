@@ -1,4 +1,4 @@
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/88f50aad-d686-416a-aefb-ed6b264678b0" /># Laporan Praktikum Minggu 10
+ /># Laporan Praktikum Minggu 10
 Topik: Manajemen Memori – Page Replacement (FIFO & LRU)
 
 ---
