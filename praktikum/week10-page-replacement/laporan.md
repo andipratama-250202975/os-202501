@@ -1,4 +1,4 @@
- /># Laporan Praktikum Minggu 10
+# Laporan Praktikum Minggu 10
 Topik: Manajemen Memori – Page Replacement (FIFO & LRU)
 
 ---
@@ -81,11 +81,6 @@ LRU menggantikan halaman yang paling lama tidak digunakan berdasarkan asumsi bah
 ---
 
 ## Kode / Perintah
-# ============================================
-# Program Simulasi Page Replacement
-# Algoritma FIFO dan LRU
-# ============================================
-
 pages = [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
 frame_size = 3
 
@@ -155,65 +150,86 @@ def lru(pages, frame_size):
     print("Total Page Fault :", page_faults)
     return page_faults
 
-
-# ======================
-# Program Utama
-# ======================
-print("STRING REFERENSI :", pages)
-print("JUMLAH FRAME     :", frame_size)
-
-fifo_faults = fifo(pages, frame_size)
-lru_faults = lru(pages, frame_size)
-
-print("\n" + "=" * 50)
-print("PERBANDINGAN HASIL")
-print("=" * 50)
-print("FIFO Page Fault :", fifo_faults)
-print("LRU  Page Fault :", lru_faults)
-
-if fifo_faults > lru_faults:
-    print("Kesimpulan: LRU lebih efisien dibanding FIFO")
-elif fifo_faults < lru_faults:
-    print("Kesimpulan: FIFO lebih efisien dibanding LRU")
-else:
-    print("Kesimpulan: FIFO dan LRU sama efisien")
-
-```
-
 ---
+
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/implemntasi.png)
 
+
+
+# TABEL FIFO
+
+| Step | Page | Frame 1 | Frame 2 | Frame 3 | Status |
+| ---: | ---- | ------- | ------- | ------- | ------ |
+|    1 | 7    | 7       | -       | -       | Fault  |
+|    2 | 0    | 7       | 0       | -       | Fault  |
+|    3 | 1    | 7       | 0       | 1       | Fault  |
+|    4 | 2    | 2       | 0       | 1       | Fault  |
+|    5 | 0    | 2       | 0       | 1       | Hit    |
+|    6 | 3    | 2       | 3       | 1       | Fault  |
+|    7 | 0    | 2       | 3       | 0       | Fault  |
+|    8 | 4    | 4       | 3       | 0       | Fault  |
+|    9 | 2    | 4       | 2       | 0       | Fault  |
+|   10 | 3    | 4       | 2       | 3       | Fault  |
+|   11 | 0    | 0       | 2       | 3       | Fault  |
+|   12 | 3    | 0       | 2       | 3       | Hit    |
+|   13 | 2    | 0       | 2       | 3       | Hit    |
+
+# TABEL LRU
+
+| Step | Page | Frame 1 | Frame 2 | Frame 3 | Status |
+| ---: | ---- | ------- | ------- | ------- | ------ |
+|    1 | 7    | 7       | -       | -       | Fault  |
+|    2 | 0    | 7       | 0       | -       | Fault  |
+|    3 | 1    | 7       | 0       | 1       | Fault  |
+|    4 | 2    | 2       | 0       | 1       | Fault  |
+|    5 | 0    | 2       | 0       | 1       | Hit    |
+|    6 | 3    | 2       | 0       | 3       | Fault  |
+|    7 | 0    | 2       | 0       | 3       | Hit    |
+|    8 | 4    | 4       | 0       | 3       | Fault  |
+|    9 | 2    | 4       | 0       | 2       | Fault  |
+|   10 | 3    | 4       | 3       | 2       | Fault  |
+|   11 | 0    | 0       | 3       | 2       | Fault  |
+|   12 | 3    | 0       | 3       | 2       | Hit    |
+|   13 | 2    | 0       | 3       | 2       | Hit    |
+
+
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+Berdasarkan hasil simulasi, algoritma FIFO mengganti halaman tanpa mempertimbangkan pola penggunaan sehingga menghasilkan page fault lebih banyak (10). Sementara itu, algoritma LRU memperhatikan halaman yang paling lama tidak digunakan sehingga lebih efisien dengan page fault lebih sedikit (9). Hal ini menunjukkan bahwa LRU lebih efektif dalam pengelolaan memori, meskipun implementasinya lebih kompleks dibanding FIFO.  
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1. Algoritma FIFO (First In First Out) bekerja dengan mengganti halaman yang pertama kali masuk ke memori tanpa memperhatikan frekuensi atau waktu terakhir penggunaan, sehingga menghasilkan 10 page fault.
+
+2. Algoritma LRU (Least Recently Used) mengganti halaman yang paling lama tidak digunakan, sehingga lebih sesuai dengan pola akses memori dan menghasilkan 9 page fault.
+
+3. Perbandingan hasil menunjukkan bahwa LRU lebih efisien dibanding FIFO karena mampu mengurangi jumlah kesalahan halaman.
+
+4. Dengan demikian, algoritma LRU lebih direkomendasikan untuk sistem yang membutuhkan efisiensi pengelolaan memori, meskipun implementasinya lebih kompleks dibanding FIFO.
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa perbedaan utama FIFO dan LRU?
+   **Jawaban: FIFO lebih sederhana tetapi kurang efisien, sedangkan LRU lebih efisien dalam mengurangi page fault karena menyesuaikan dengan pola penggunaan memori.**  
+2. Mengapa FIFO dapat menghasilkan Belady's Anomaly ?
+   **Jawaban:FIFO hanya bergantung pada urutan masuk halaman, bukan pada kebutuhan aktual sistem, sehingga dapat bersifat tidak optimal dan menimbulkan Belady’s Anomaly.**  
+3.Mengapa LRU umumnya menghasilkan kinerja lebih baik dibandingkan FIFO?
+   **Jawaban:RU umumnya menghasilkan kinerja lebih baik dibandingkan FIFO karena algoritma ini mempertimbangkan pola akses memori (locality of reference).**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?
+  tugas yang banyak  
+- Bagaimana cara Anda mengatasinya?
+  kerjakan tugasnya
 
 ---
 
