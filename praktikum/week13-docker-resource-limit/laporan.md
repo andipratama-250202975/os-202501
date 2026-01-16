@@ -1,6 +1,7 @@
 
 # Laporan Praktikum Minggu 13
 Topik: Docker – Resource Limit (CPU & Memori)
+
 ---
 
 ## Identitas
@@ -116,6 +117,11 @@ except MemoryError:
 
 
 ---
+
+## Srenshott hasil
+
+<img width="1920" height="1200" alt="Screenshot (39)" src="https://github.com/user-attachments/assets/b4e1ed66-5625-4c7c-8c8c-bed62ce8117a" />
+
 ## Analisis
 
 1. **Analisis Pembatasan Memori (Memory Limit)**
