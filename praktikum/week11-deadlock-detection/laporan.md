@@ -192,8 +192,9 @@ Hasil ini menunjukkan bahwa algoritma deteksi deadlock berbasis wait-for graph e
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
-
+Deadlock terjadi saat dua atau lebih proses saling menunggu untuk suatu kejadian yang hanya dapat disebabkan oleh salah satu dari proses yang menunggu.
+Deadlock dapat dihindari dengan menghilangkan salah satu dari 4 kondisi yang menyebabkan deadlock
+Kesimpulan dari simulasi tersebut menunjukkan bahwa data proses yang disediakan menghasilkan output yaitu proses tersebut mengalami deadlock karena memenuhi 4 syarat tersebut.
 ---
 
 ## Quiz
