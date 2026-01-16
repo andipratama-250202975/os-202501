@@ -147,7 +147,11 @@ while True:
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/Docker_version.png)
+![Screenshot hasil](screenshots/Build_image.png)
+![Screenshot hasil](screenshots/hasil_limit.png)
+![Screenshot hasil](screenshots/hasil_limit_200m.png)
+![Screenshot hasil](screenshots/Docker_Stats.png)
 
 ---
 
