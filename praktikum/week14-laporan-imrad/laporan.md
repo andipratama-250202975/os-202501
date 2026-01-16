@@ -5,16 +5,18 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : Andi pratama  
+- **NIM**   : 250202975  
+- **Kelas** : IKRA
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+1. Menyusun laporan praktikum dengan struktur ilmiah (Pendahuluan–Metode–Hasil–Pembahasan–Kesimpulan).
+2. Menyajikan hasil uji dalam bentuk tabel dan/atau grafik yang jelas.
+3. Menuliskan analisis hasil dengan argumentasi yang logis.
+4. Menyusun sitasi dan daftar pustaka dengan format yang konsisten.
+5. Mengunggah draft laporan ke repositori dengan rapi dan tepat waktu.
 
 ---
 
@@ -24,10 +26,12 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. Menentukan Topik Laporan.  
+2. Menyiapkan Bahan
+3. Menulis Laporan dengan Struktur IMRAD
+4. Menyajikan Tabel/Grafik
+5. Sitasi dan Daftar Pustaka
+6. Commit & Push Draft
 
 ---
 
