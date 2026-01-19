@@ -115,6 +115,15 @@ Langkah eksperimen dilakukan secara berurutan sebagai berikut:
 
 ## 3.1  Hasil Eksekusi Program
 
+
+![Screenshot hasil](screenshots/hasil.png)
+
+Kode program ini digunakan untuk mensimulasikan dan mendeteksi kondisi deadlock dengan pendekatan sederhana. Setiap proses direpresentasikan sebagai sebuah entitas yang memegang satu sumber daya (alloc) dan meminta sumber daya lain (request). Status kepemilikan sumber daya disimpan dalam struktur data resources.
+
+Fungsi detect_deadlock() bekerja dengan memeriksa apakah seluruh proses hanya berada dalam kondisi menunggu tanpa adanya sumber daya yang bebas. Jika semua sumber daya yang diminta sedang dipegang oleh proses lain, maka sistem dinyatakan mengalami deadlock. Hasil deteksi kemudian ditampilkan dalam bentuk pesan yang menunjukkan apakah terjadi kebuntuan atau tidak.
+
+---
+
 Hasil (Results)
 1. Tabel Hasil Pengujian
 
