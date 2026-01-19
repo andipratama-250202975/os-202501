@@ -89,7 +89,7 @@ Variabel ini dijaga tetap konstan agar hasil pengamatan hanya dipengaruhi oleh v
 
 ---
 
-## 2.3 Langkah Eksperimen
+## 2.4 Langkah Eksperimen
 Langkah eksperimen dilakukan secara berurutan sebagai berikut:
 1.Mendefinisikan sejumlah proses yang merepresentasikan individu dalam kehidupan sehari-hari.
 2.Menentukan sumber daya terbatas yang digunakan bersama oleh proses-proses tersebut.
@@ -100,7 +100,7 @@ Langkah eksperimen dilakukan secara berurutan sebagai berikut:
 
 ---
 
-## 2.  Parameter/datatest
+## 2.5  Parameter/datatest
 
 | Parameter          | Deskripsi                                   |
 | ------------------ | ------------------------------------------- |
@@ -144,23 +144,44 @@ c. Deadlock dapat dihindari jika sistem memiliki sumber daya bebas atau menerapk
 
 ## 3.2 Tabel Perbandingan Hasil
 
+| No | Skenario       | Kondisi Alokasi Sumber Daya          | Kondisi Permintaan                 | Hasil Deteksi  | Penjelasan                                                      |
+| -- | -------------- | ------------------------------------ | ---------------------------------- | -------------- | --------------------------------------------------------------- |
+| 1  | Deadlock       | P1 memegang Pulpen, P2 memegang Buku | P1 meminta Buku, P2 meminta Pulpen | Deadlock       | Terjadi saling menunggu karena tidak ada sumber daya yang bebas |
+| 2  | Tidak Deadlock | P1 memegang Pulpen, Buku bebas       | P1 meminta Buku                    | Tidak Deadlock | Permintaan dapat dipenuhi sehingga proses dapat berjalan        |
+| 3  | Pencegahan     | P1 melepas Pulpen                    | P2 memegang Buku                   | Tidak Deadlock | Pelepasan sumber daya memutus siklus ketergantungan             |
+Berdasarkan tabel perbandingan hasil di atas, dapat disimpulkan bahwa kondisi deadlock hanya terjadi pada skenario pertama, yaitu ketika setiap proses memegang satu sumber daya dan secara bersamaan meminta sumber daya lain yang sedang dipegang oleh proses lain. Kondisi ini menyebabkan terbentuknya siklus ketergantungan sehingga tidak ada proses yang dapat melanjutkan eksekusi.
 
+Pada skenario kedua dan ketiga, deadlock tidak terjadi karena terdapat sumber daya yang masih bebas atau adanya pelepasan sumber daya oleh salah satu proses. Hal ini menunjukkan bahwa ketersediaan sumber daya dan kebijakan pelepasan sumber daya memiliki peran penting dalam mencegah terjadinya deadlock. Dengan demikian, hasil praktikum menegaskan bahwa deadlock dapat dihindari apabila sistem tidak memenuhi kondisi saling menunggu secara bersamaan.
+
+---
 
 # 4. Pembahasan (Discussion)
+Berdasarkan tabel perbandingan hasil di atas, dapat disimpulkan bahwa kondisi deadlock hanya terjadi pada skenario pertama, yaitu ketika setiap proses memegang satu sumber daya dan secara bersamaan meminta sumber daya lain yang sedang dipegang oleh proses lain. Kondisi ini menyebabkan terbentuknya siklus ketergantungan sehingga tidak ada proses yang dapat melanjutkan eksekusi.
 
+Pada skenario kedua dan ketiga, deadlock tidak terjadi karena terdapat sumber daya yang masih bebas atau adanya pelepasan sumber daya oleh salah satu proses. Hal ini menunjukkan bahwa ketersediaan sumber daya dan kebijakan pelepasan sumber daya memiliki peran penting dalam mencegah terjadinya deadlock. Dengan demikian, hasil praktikum menegaskan bahwa deadlock dapat dihindari apabila sistem tidak memenuhi kondisi saling menunggu secara bersamaan.
 
 ---
 ## 4.1 Analisis
+Berdasarkan hasil praktikum, deadlock terjadi ketika seluruh proses saling menunggu sumber daya yang tidak tersedia. Kondisi ini ditandai dengan tidak adanya sumber daya bebas serta terbentuknya siklus ketergantungan antarproses. Simulasi yang dilakukan berhasil menunjukkan bahwa pola alokasi dan permintaan sumber daya sangat berpengaruh terhadap terjadinya deadlock.
 
-Hasil simulasi menunjukkan bahwa algoritma FIFO menghasilkan **10 page fault**, sedangkan algoritma LRU menghasilkan **9 page fault**. Perbedaan ini terjadi karena algoritma FIFO hanya mempertimbangkan urutan waktu masuk halaman ke memori tanpa memperhatikan frekuensi atau pola penggunaannya.
-
-Sebaliknya, algoritma LRU mengganti halaman yang paling lama tidak digunakan, sehingga lebih sesuai dengan prinsip *locality of reference*. Pendekatan ini memungkinkan sistem mempertahankan halaman yang masih sering diakses, sehingga mampu mengurangi jumlah *page fault* dan meningkatkan efisiensi penggunaan memori.
+Pada skenario lain, deadlock tidak terjadi karena adanya sumber daya yang masih tersedia atau pelepasan sumber daya oleh salah satu proses. Hal ini membuktikan bahwa kebuntuan dapat dicegah dengan pengelolaan sumber daya yang tepat. Meskipun simulasi bersifat sederhana, praktikum ini efektif dalam membantu memahami konsep dasar deteksi deadlock dalam sistem operasi.
 
 ---
 
 ## 4.2  Kelebihan dan Kekurangan
+Kelebihan
 
+1. Praktikum menggunakan simulasi sederhana sehingga mudah dipahami oleh pemula.
+2. Analogi kehidupan sehari-hari membantu memperjelas konsep deadlock dalam sistem operasi.
+3. Kode program ringkas dan mudah dimodifikasi untuk berbagai skenario pengujian.
+4. Praktikum efektif untuk menunjukkan hubungan antara proses, sumber daya, dan kondisi kebuntuan.
 
+Kekurangan
+
+1. Simulasi belum mencerminkan kondisi sistem operasi yang sesungguhnya karena tidak menggunakan proses paralel atau thread.
+2. Algoritma deteksi yang digunakan masih sederhana dan belum menerapkan metode formal seperti graf alokasi sumber daya secara penuh.
+3. Tidak mempertimbangkan aspek waktu eksekusi dan prioritas proses.
+4. Jumlah proses dan sumber daya masih terbatas sehingga kasus deadlock yang lebih kompleks belum terwakili.
 
 ---
 
@@ -168,31 +189,46 @@ Sebaliknya, algoritma LRU mengganti halaman yang paling lama tidak digunakan, se
 # 5. Closing (Penutupan)
 
 ## 5.1 Kesimpulan
-
+Berdasarkan hasil praktikum yang telah dilakukan, dapat disimpulkan bahwa kebuntuan (deadlock) terjadi akibat adanya kondisi saling menunggu antarproses terhadap sumber daya yang terbatas. Melalui simulasi sederhana, praktikum ini berhasil menunjukkan bagaimana pola alokasi dan permintaan sumber daya dapat menyebabkan atau mencegah terjadinya deadlock. Dengan demikian, praktikum ini membantu memahami konsep dasar deteksi deadlock dalam sistem operasi secara lebih konkret.
 
 ---
 
 ## 5.2 Saran
-
+Untuk pengembangan praktikum selanjutnya, disarankan agar simulasi diperluas dengan menambahkan jumlah proses dan sumber daya yang lebih banyak serta menerapkan algoritma deteksi deadlock yang lebih kompleks. Selain itu, penggunaan konsep eksekusi paralel dapat dipertimbangkan agar simulasi lebih mendekati kondisi sistem operasi yang sebenarnya.
 
 ---
 
 
 ## 5.3 Quiz
 
-1. **Mengapa format IMRAD membantu membuat laporan praktikum lebih ilmiah dan mudah dievaluasi?**  
+1. **Mengapa format IMRAD membantu membuat laporan praktikum lebih ilmiah dan mudah dievaluasi?** format IMRAD membantu laporan praktikum menjadi lebih ilmiah karena terstruktur, objektif, mudah dipahami, dan mudah dievaluasi oleh penguji.  
   
 
-2. **Apa perbedaan antara bagian Hasil dan Pembahasan?**  
+2. **Apa perbedaan antara bagian Hasil dan Pembahasan?**  Bagian hasil berisi temuan objektif yang diperoleh dari praktikum atau eksperimen. Pada bagian ini, penulis hanya menyajikan data apa adanya tanpa memberikan interpretasi atau pendapat pribadi. Data dapat ditampilkan dalam bentuk tabel, grafik, atau output program, disertai penjelasan singkat tentang apa yang terlihat. Tujuan utama bagian hasil adalah menunjukkan apa yang terjadi selama pengujian.
    
 
-3. **Mengapa sitasi dan daftar pustaka penting, bahkan untuk laporan praktikum?**  
+3. **Mengapa sitasi dan daftar pustaka penting, bahkan untuk laporan praktikum?**
+a. Menunjukkan kejujuran akademik
+b. Memperkuat keilmiahan laporan
+c. Memudahkan verifikasi dan penilaian
+d. Menghargai karya ilmiah orang lain
+e. Melatih kebiasaan menulis ilmiah yang benar
   
 ---
 
 ## Daftar Pustaka
 
+1.Silberschatz, A., Galvin, P. B., & Gagne, G. (2018).
+Operating System Concepts (10th ed.). Hoboken, NJ: John Wiley & Sons.
 
+2.Tanenbaum, A. S., & Bos, H. (2015).
+Modern Operating Systems (4th ed.). Boston: Pearson Education.
+
+3.Stallings, W. (2018).
+Operating Systems: Internals and Design Principles (9th ed.). Boston: Pearson.
+
+4.Day, R. A., & Gastel, B. (2012).
+How to Write and Publish a Scientific Paper (7th ed.). Cambridge: Cambridge University Press.
 
 ---
 
