@@ -15,9 +15,9 @@ Topik: Deteksi Kebuntuan
 
 ## 1.1 Latar Belakang
 
-Perkembangan sistem komputer modern menuntut kemampuan pengelolaan sumber daya yang semakin kompleks, khususnya pada sistem operasi yang mendukung eksekusi banyak proses secara bersamaan. Dalam lingkungan multiprogramming dan multitasking, berbagai proses harus berbagi sumber daya terbatas seperti memori, perangkat input/output, dan prosesor. Kondisi ini, jika tidak dikelola dengan baik, dapat menimbulkan permasalahan serius yang dikenal sebagai kebuntuan (deadlock).
+  Perkembangan sistem komputer modern menuntut kemampuan pengelolaan sumber daya yang semakin kompleks, khususnya pada sistem operasi yang mendukung eksekusi banyak proses secara bersamaan. Dalam lingkungan multiprogramming dan multitasking, berbagai proses harus berbagi sumber daya terbatas seperti memori, perangkat input/output, dan prosesor. Kondisi ini, jika tidak dikelola dengan baik, dapat menimbulkan permasalahan serius yang dikenal sebagai kebuntuan (deadlock).
 
-Deadlock merupakan keadaan ketika dua atau lebih proses saling menunggu pelepasan sumber daya yang sedang dipegang oleh proses lain, sehingga tidak ada satu pun proses yang dapat melanjutkan eksekusinya. Kondisi kebuntuan ini menyebabkan sistem menjadi tidak responsif, menurunkan kinerja, serta berpotensi mengakibatkan kegagalan layanan. Oleh karena itu, deadlock menjadi salah satu permasalahan penting yang harus diperhatikan dalam perancangan dan pengelolaan sistem operasi.
+  Deadlock merupakan keadaan ketika dua atau lebih proses saling menunggu pelepasan sumber daya yang sedang dipegang oleh proses lain, sehingga tidak ada satu pun proses yang dapat melanjutkan eksekusinya. Kondisi kebuntuan ini menyebabkan sistem menjadi tidak responsif, menurunkan kinerja, serta berpotensi mengakibatkan kegagalan layanan. Oleh karena itu, deadlock menjadi salah satu permasalahan penting yang harus diperhatikan dalam perancangan dan pengelolaan sistem operasi.
 
 ---
 ## 1.2 Rumusan Masalah
@@ -156,28 +156,28 @@ Pada skenario kedua dan ketiga, deadlock tidak terjadi karena terdapat sumber da
 ---
 
 # 4. Pembahasan (Discussion)
-Berdasarkan tabel perbandingan hasil di atas, dapat disimpulkan bahwa kondisi deadlock hanya terjadi pada skenario pertama, yaitu ketika setiap proses memegang satu sumber daya dan secara bersamaan meminta sumber daya lain yang sedang dipegang oleh proses lain. Kondisi ini menyebabkan terbentuknya siklus ketergantungan sehingga tidak ada proses yang dapat melanjutkan eksekusi.
 
-Pada skenario kedua dan ketiga, deadlock tidak terjadi karena terdapat sumber daya yang masih bebas atau adanya pelepasan sumber daya oleh salah satu proses. Hal ini menunjukkan bahwa ketersediaan sumber daya dan kebijakan pelepasan sumber daya memiliki peran penting dalam mencegah terjadinya deadlock. Dengan demikian, hasil praktikum menegaskan bahwa deadlock dapat dihindari apabila sistem tidak memenuhi kondisi saling menunggu secara bersamaan.
+  Berdasarkan tabel perbandingan hasil di atas, dapat disimpulkan bahwa kondisi deadlock hanya terjadi pada skenario pertama, yaitu ketika setiap proses memegang satu sumber daya dan secara bersamaan meminta sumber daya lain yang sedang dipegang oleh proses lain. Kondisi ini menyebabkan terbentuknya siklus ketergantungan sehingga tidak ada proses yang dapat melanjutkan eksekusi.
+
+  Pada skenario kedua dan ketiga, deadlock tidak terjadi karena terdapat sumber daya yang masih bebas atau adanya pelepasan sumber daya oleh salah satu proses. Hal ini menunjukkan bahwa ketersediaan sumber daya dan kebijakan pelepasan sumber daya memiliki peran penting dalam mencegah terjadinya deadlock. Dengan demikian, hasil praktikum menegaskan bahwa deadlock dapat dihindari apabila sistem tidak memenuhi kondisi saling menunggu secara bersamaan.
 
 ---
 ## 4.1 Analisis
-Berdasarkan hasil praktikum, deadlock terjadi ketika seluruh proses saling menunggu sumber daya yang tidak tersedia. Kondisi ini ditandai dengan tidak adanya sumber daya bebas serta terbentuknya siklus ketergantungan antarproses. Simulasi yang dilakukan berhasil menunjukkan bahwa pola alokasi dan permintaan sumber daya sangat berpengaruh terhadap terjadinya deadlock.
+  Berdasarkan hasil praktikum, deadlock terjadi ketika seluruh proses saling menunggu sumber daya yang tidak tersedia. Kondisi ini ditandai dengan tidak adanya sumber daya bebas serta terbentuknya siklus ketergantungan antarproses. Simulasi yang dilakukan berhasil menunjukkan bahwa pola alokasi dan permintaan sumber daya sangat berpengaruh terhadap terjadinya deadlock.
 
-Pada skenario lain, deadlock tidak terjadi karena adanya sumber daya yang masih tersedia atau pelepasan sumber daya oleh salah satu proses. Hal ini membuktikan bahwa kebuntuan dapat dicegah dengan pengelolaan sumber daya yang tepat. Meskipun simulasi bersifat sederhana, praktikum ini efektif dalam membantu memahami konsep dasar deteksi deadlock dalam sistem operasi.
+  Pada skenario lain, deadlock tidak terjadi karena adanya sumber daya yang masih tersedia atau pelepasan sumber daya oleh salah satu proses. Hal ini membuktikan bahwa kebuntuan dapat dicegah dengan pengelolaan sumber daya yang tepat. Meskipun simulasi bersifat sederhana, praktikum ini efektif dalam membantu memahami konsep dasar deteksi deadlock dalam sistem operasi.
 
 ---
 
 ## 4.2  Kelebihan dan Kekurangan
-Kelebihan
 
+Kelebihan
 1. Praktikum menggunakan simulasi sederhana sehingga mudah dipahami oleh pemula.
 2. Analogi kehidupan sehari-hari membantu memperjelas konsep deadlock dalam sistem operasi.
 3. Kode program ringkas dan mudah dimodifikasi untuk berbagai skenario pengujian.
 4. Praktikum efektif untuk menunjukkan hubungan antara proses, sumber daya, dan kondisi kebuntuan.
 
 Kekurangan
-
 1. Simulasi belum mencerminkan kondisi sistem operasi yang sesungguhnya karena tidak menggunakan proses paralel atau thread.
 2. Algoritma deteksi yang digunakan masih sederhana dan belum menerapkan metode formal seperti graf alokasi sumber daya secara penuh.
 3. Tidak mempertimbangkan aspek waktu eksekusi dan prioritas proses.
@@ -189,12 +189,12 @@ Kekurangan
 # 5. Closing (Penutupan)
 
 ## 5.1 Kesimpulan
-Berdasarkan hasil praktikum yang telah dilakukan, dapat disimpulkan bahwa kebuntuan (deadlock) terjadi akibat adanya kondisi saling menunggu antarproses terhadap sumber daya yang terbatas. Melalui simulasi sederhana, praktikum ini berhasil menunjukkan bagaimana pola alokasi dan permintaan sumber daya dapat menyebabkan atau mencegah terjadinya deadlock. Dengan demikian, praktikum ini membantu memahami konsep dasar deteksi deadlock dalam sistem operasi secara lebih konkret.
+  Berdasarkan hasil praktikum yang telah dilakukan, dapat disimpulkan bahwa kebuntuan (deadlock) terjadi akibat adanya kondisi saling menunggu antarproses terhadap sumber daya yang terbatas. Melalui simulasi sederhana, praktikum ini berhasil menunjukkan bagaimana pola alokasi dan permintaan sumber daya dapat menyebabkan atau mencegah terjadinya deadlock. Dengan demikian, praktikum ini membantu memahami konsep dasar deteksi deadlock dalam sistem operasi secara lebih konkret.
 
 ---
 
 ## 5.2 Saran
-Untuk pengembangan praktikum selanjutnya, disarankan agar simulasi diperluas dengan menambahkan jumlah proses dan sumber daya yang lebih banyak serta menerapkan algoritma deteksi deadlock yang lebih kompleks. Selain itu, penggunaan konsep eksekusi paralel dapat dipertimbangkan agar simulasi lebih mendekati kondisi sistem operasi yang sebenarnya.
+  Untuk pengembangan praktikum selanjutnya, disarankan agar simulasi diperluas dengan menambahkan jumlah proses dan sumber daya yang lebih banyak serta menerapkan algoritma deteksi deadlock yang lebih kompleks. Selain itu, penggunaan konsep eksekusi paralel dapat dipertimbangkan agar simulasi lebih mendekati kondisi sistem operasi yang sebenarnya.
 
 ---
 
